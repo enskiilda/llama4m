@@ -32,20 +32,12 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: [
           {
-            key: 'X-Frame-Options',
-            value: 'ALLOWALL',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-          {
             key: 'X-XSS-Protection',
             value: '0',
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data: blob: 'unsafe-inline'; font-src * data:; connect-src *; media-src *; object-src *; child-src *; form-action *; frame-ancestors *; upgrade-insecure-requests;",
+            value: "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:; script-src * 'unsafe-inline' 'unsafe-eval'; style-src * 'unsafe-inline'; img-src * data: blob:; font-src * data:; connect-src *; media-src *; object-src *; child-src *; form-action *; frame-ancestors *;",
           },
           {
             key: 'Permissions-Policy',
